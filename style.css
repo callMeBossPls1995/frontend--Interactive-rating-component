@@ -1,0 +1,242 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #212832;
+  --color-accent: #fc7613;
+}
+
+img {
+  object-fit: contain;
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Overpass";
+  line-height: 1.6;
+  background: #141519;
+}
+
+.title {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.content {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #596474;
+}
+
+.button {
+  display: block;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.6em 1em;
+  border-radius: 50px;
+  font-weight: 700;
+
+  transition: all 0.3s;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.button-primary {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.button-primary:active {
+  background: #fff;
+  color: var(--color-accent);
+}
+
+.container {
+  width: 280px;
+  margin: auto;
+  overflow: hidden;
+  background: var(--color-primary);
+}
+
+/*  */
+/*  */
+/*  */
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  border-radius: 25px;
+}
+
+.container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 1.6rem;
+  border-radius: 15px;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s;
+}
+
+.star img {
+  width: 60%;
+  position: absolute;
+  z-index: 1;
+}
+
+.star:hover.star::before {
+  opacity: 0.3;
+  background: #fff;
+}
+
+.star::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: #262f38;
+}
+
+/* rating */
+.rating {
+  margin: 0.6rem 0;
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.rating > span {
+  color: #596474;
+  z-index: 3;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rating > span:hover {
+  opacity: 0.8;
+  color: #fff;
+}
+
+.rating > span:hover::after {
+  background: var(--color-accent);
+}
+
+.rating > span::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  background: #262f38;
+  z-index: -1;
+}
+
+.rating .active {
+  color: #fff;
+}
+
+.rating .active::after {
+  color: #fff;
+  background: var(--color-accent);
+}
+
+.container {
+  position: relative;
+  height: 320px;
+  overflow: hidden;
+}
+
+.container > div {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  transition: all 0.5s;
+}
+
+.thankyou {
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s 1s;
+}
+
+.thankyou img {
+  width: 100px;
+}
+
+.star-rating {
+  background: #51637c4d;
+  padding: 0.5em 2em;
+  color: var(--color-accent);
+  border-radius: 15px;
+  display: inline-block;
+  font-weight: 400;
+}
+
+.thankyou .title {
+  transform: translateY(10px);
+}
+
+.container > div:first-child {
+  visibility: visible;
+  transform: rotateY(0deg);
+}
+
+.container.active > div:first-child {
+  transform: rotateY(90deg);
+}
+
+.container > div:nth-child(2) {
+  visibility: hidden;
+  transform: rotateY(-90deg);
+}
+
+.container.active > div:nth-child(2) {
+  visibility: visible;
+  transform: rotateY(0deg);
+}
